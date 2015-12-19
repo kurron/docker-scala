@@ -1,0 +1,10 @@
+maven:
+    build: .
+    labels:
+        org.kurron.description: "Apache Maven"
+        org.kurron.version: "3.3.3"
+    container_name: "maven"
+    net: "host"
+    volumes:
+        - /home/vagrant:/home/developer
+    user: 1000:1000
