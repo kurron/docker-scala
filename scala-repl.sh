@@ -2,12 +2,13 @@
 
 CMD="docker run \
        --rm \
-       --name scalac \
+       --interactive \
+       --tty \
+       --name scala \
        --net "host" \
        --user 1000:1000 \
        --volume $HOME:/home/developer \
        --volume $(pwd):/pwd \
-       --entrypoint /opt/scala/bin/scalac \
        kurron/docker-scala:latest"
 
 #echo $CMD
