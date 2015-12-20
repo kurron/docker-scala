@@ -1,9 +1,6 @@
-maven:
+scala:
     build: .
-    labels:
-        org.kurron.description: "Apache Maven"
-        org.kurron.version: "3.3.3"
-    container_name: "maven"
+    container_name: "scala"
     net: "host"
     volumes:
         - /home/vagrant:/home/developer

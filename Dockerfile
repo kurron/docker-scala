@@ -2,19 +2,19 @@ FROM kurron/docker-jetbrains-base:latest
 
 MAINTAINER Ron Kurr <kurr@kurron.org>
 
-LABEL org.kurron.ide.name="Apache Maven" org.kurron.ide.version=3.3.9
+LABEL org.kurron.ide.name="Scala" org.kurron.ide.version=2.11.7
 
-ADD http://mirrors.ibiblio.org/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz /tmp/ide.tar.gz
+ADD http://downloads.typesafe.com/scala/2.11.7/scala-2.11.7.tgz /tmp/ide.tar.gz
 
-RUN mkdir -p /opt/maven && \
-    tar zxvf /tmp/ide.tar.gz --strip-components=1 -C /opt/maven && \
+RUN mkdir -p /opt/scala && \
+    tar zxvf /tmp/ide.tar.gz --strip-components=1 -C /opt/scala && \
     rm /tmp/ide.tar.gz
 
-ENV M2_HOME=/opt/maven
+ENV SCALA_HOME=/opt/scala
 
 VOLUME ["/pwd"]
 
 USER developer:developer
 WORKDIR /pwd
-ENTRYPOINT ["/opt/maven/bin/mvn"]
-CMD ["--version"]
+ENTRYPOINT ["/opt/scala/bin/scala"]
+CMD ["-help"]
