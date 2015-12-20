@@ -17,4 +17,4 @@ VOLUME ["/pwd"]
 USER developer:developer
 WORKDIR /pwd
 ENTRYPOINT ["/opt/scala/bin/scala"]
-CMD ["-help"]
+#CMD ["-help"]
